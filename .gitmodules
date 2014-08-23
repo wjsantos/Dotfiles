@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/editorconfig"]
 	path = .vim/bundle/editorconfig
 	url = git@github.com:editorconfig/editorconfig-vim.git
+[submodule ".vim/bundle/emmet-vim"]
+	path = .vim/bundle/emmet-vim
+	url = git@github.com:mattn/emmet-vim.git
