@@ -23,6 +23,7 @@ set expandtab
 set autoindent
 set nobackup
 set noswapfile
+set nu
 
 if v:version >= 703
     "undo settings
