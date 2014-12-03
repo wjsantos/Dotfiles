@@ -5,3 +5,7 @@ export PS1='\[\033[01;31m\]\u:\[\033[01;33m\]\[\033[01;34m\]\w\[\033[00m\]$(__gi
 
 # Disables tmux auto title
 export DISABLE_AUTO_TITLE=true
+
+# Docker
+alias docker.rm='docker rm -f $(docker ps -a -q)'
+alias docker.rmi='docker rmi -f $(docker images -q)'
