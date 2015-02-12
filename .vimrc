@@ -24,6 +24,7 @@ set autoindent
 set nobackup
 set noswapfile
 set nu
+set cursorcolumn
 
 if v:version >= 703
     "undo settings
