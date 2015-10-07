@@ -13,7 +13,7 @@ set showcmd     "show incomplete cmds down the bottom
 set showmode    "show current mode down the bottom
 set incsearch   "find the next match as we type the search
 set hlsearch    "hilight searches by default
-set wrap        "dont wrap lines
+set nowrap      "dont wrap lines
 set linebreak   "wrap lines at convenient points
 set mouse=a     "some stuff to get the mouse going in term
 set t_Co=256    "tell the term has 256 colors
