@@ -2,7 +2,7 @@
   name = Wellington Santos
   email = wjsantos.wj@gmail.com
 [core]
-  editor = mvim
+  editor = vim
   excludesfile = /Users/wjsantos/.gitignore
 [color]
   diff = auto
