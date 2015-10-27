@@ -1,0 +1,3 @@
+wjsantos ALL = NOPASSWD: /home/wjsantos/Dotfiles/linux-mac-scripts/keyboard-backlight
+wjsantos ALL = NOPASSWD: /home/wjsantos/Dotfiles/linux-mac-scripts/screen-backlight
+
