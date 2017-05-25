@@ -11,18 +11,40 @@
 
 (package-initialize)
 
+;; helm 
 (use-package helm
   :ensure t
   :bind (("M-x" . helm-M-x)
 	 ("C-c C-f" . helm-find-files)
 	 ("C-c C-b" . helm-buffers-list)))
 
+;; evil mode
 (use-package evil
   :ensure t
-  :config (evil-mode 1)))
+  :config (evil-mode 1))
 
+;; ruby
+(use-package ruby-mode
+  :ensure t)
 
-(use-package projectile
+;; rspec
+(use-package rspec-mode
+  :ensure t)
+
+;; magit
+(use-package magit
   :ensure t
-  :config (projectile-mode))
-  
+  :bind (("C-c C-m" . magit-status))
+  :config (magit-mode))
+
+;; config
+(set-default 'truncate-lines t)
+(global-linum-mode t) 
+(setq vc-follow-symlinks nil)
+
+;; themes
+(setq custom-safe-themes t)
+(load-theme 'solarized-dark t)
+
+
+
