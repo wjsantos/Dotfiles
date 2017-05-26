@@ -43,10 +43,11 @@
   :config (magit-mode))
 
 ;; config
+(tool-bar-mode -1)
 (set-default 'truncate-lines t)
 (global-linum-mode t)
 (setq vc-follow-symlinks nil)
-(setq ruby-deep-indent-paren nil)
+(setq ruby-deep-indent-paren 1)
 
 ;; themes
 ;; magit
