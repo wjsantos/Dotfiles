@@ -7,7 +7,7 @@ syntax on
 filetype plugin indent on
 
 "colorscheme wombat
-colorscheme Tomorrow-Night-Bright
+colorscheme dracula
 
 set showcmd     "show incomplete cmds down the bottom
 set showmode    "show current mode down the bottom
