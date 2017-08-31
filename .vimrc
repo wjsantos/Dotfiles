@@ -25,6 +25,8 @@ set nobackup
 set noswapfile
 set nu
 set cursorcolumn
+set guifont=Inconsolata\ Bold\ 12
+
 if has('gui_running')
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
