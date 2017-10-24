@@ -55,3 +55,6 @@
 [submodule ".vim/bundle/vim-toml"]
 	path = .vim/bundle/vim-toml
 	url = https://github.com/cespare/vim-toml.git
+[submodule ".vim/bundle/vim-coloresque"]
+	path = .vim/bundle/vim-coloresque
+	url = https://github.com/gorodinskiy/vim-coloresque.git
