@@ -1,22 +1,43 @@
-"Use Vim settings, rather then Vi settings (much better!).
-""This must be first, because it changes other options as a side effect.
-set nocompatible
+let mapleader=","
 
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
+set nocompatible  "Use Vim settings, rather then Vi settings (much better!).
+filetype off      " required
+syntax   on       " syntax highlight
 
-"colorscheme wombat
-colorscheme dracula
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-set showcmd     "show incomplete cmds down the bottom
-set showmode    "show current mode down the bottom
-set incsearch   "find the next match as we type the search
-set hlsearch    "hilight searches by default
-set nowrap      "dont wrap lines
-set linebreak   "wrap lines at convenient points
-set mouse=a     "some stuff to get the mouse going in term
-set t_Co=256    "tell the term has 256 colors
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Editor's plugins
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/bufexplorer.zip'
+Plugin 'kien/ctrlp.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'mbbill/undotree'
+
+" Lang's plugins
+Plugin 'godlygeek/tabular'
+Plugin 'mattn/emmet-vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'elixir-lang/vim-elixir'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Options
+set showcmd         "show incomplete cmds down the bottom
+set showmode        "show current mode down the bottom
+set incsearch       "find the next match as we type the search
+set hlsearch        "hilight searches by default
+set nowrap          "dont wrap lines
+set mouse=a         "some stuff to get the mouse going in term
+set t_Co=256        "tell the term has 256 colors
 set shiftwidth=2
 set softtabstop=2
 set expandtab
@@ -26,7 +47,15 @@ set noswapfile
 set nu
 set cursorcolumn
 set guifont=Inconsolata\ Bold\ 12
+set clipboard=unnamedplus
+set ttyfast
 
+" Color scheme
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
+
+" Disable gui options
 if has('gui_running')
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
@@ -34,16 +63,7 @@ if has('gui_running')
   set guioptions-=L  "remove left-hand scroll bar
 endif
 
-if v:version >= 703
-    "undo settings
-    set undodir=~/.vim/undofiles
-    set undofile
-endif
-
-nmap <silent> <Leader>p :NERDTreeToggle<CR>
-nnoremap <C-b> :BufExplorer<CR>
-
-"key mapping for window navigation
+" key mapping for window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -56,3 +76,17 @@ func! DeleteTrailingWS()
   exe "normal `z"
 endfunc
 autocmd BufWrite * :call DeleteTrailingWS()
+
+""" Plugins Configuration
+
+" NERDTree options
+nmap <silent> \p :NERDTreeToggle<CR>
+
+" vim-rspec mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+" Undotree mappings
+nmap <silent> <Leader>u :UndotreeToggle<CR>
