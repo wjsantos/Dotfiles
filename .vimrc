@@ -21,6 +21,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'mbbill/undotree'
 
 " Lang's plugins
+Plugin 'tmhedberg/matchit'
 Plugin 'godlygeek/tabular'
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-ruby/vim-ruby'
