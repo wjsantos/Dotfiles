@@ -19,6 +19,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'mbbill/undotree'
+Plugin 'jlanzarotta/bufexplorer'
 
 " Lang's plugins
 Plugin 'tmhedberg/matchit'
@@ -82,6 +83,9 @@ autocmd BufWrite * :call DeleteTrailingWS()
 
 " NERDTree options
 nmap <silent> \p :NERDTreeToggle<CR>
+
+" BufExplorer options
+nmap <C-b>b :BufExplorer<CR>
 
 " vim-rspec mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
