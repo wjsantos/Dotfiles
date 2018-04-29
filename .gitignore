@@ -1,4 +1,5 @@
 .vim/undofiles*
+.vim/bundle/*
 .i3/i3log
 
 # -*- mode: gitignore; -*-
