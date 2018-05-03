@@ -84,7 +84,7 @@ autocmd BufWrite * :call DeleteTrailingWS()
 nmap <silent> \p :NERDTreeToggle<CR>
 
 " BufExplorer options
-nmap <C-b>b :BufExplorer<CR>
+nmap <silent> <C-b> :BufExplorer<CR>
 
 " vim-rspec mappings
 let g:rspec_command = "!bundle exec rspec --drb {spec}"
