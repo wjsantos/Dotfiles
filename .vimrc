@@ -53,9 +53,8 @@ set clipboard=unnamedplus
 set ttyfast
 
 " Color scheme
-let g:solarized_termcolors=256
 set background=dark
-colorscheme solarized
+colorscheme deus
 
 " Disable gui options
 if has('gui_running')
