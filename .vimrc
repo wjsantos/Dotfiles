@@ -20,6 +20,7 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'mbbill/undotree'
 Plugin 'jlanzarotta/bufexplorer'
+Plugin 'kburdett/vim-nuuid'
 
 " Lang's plugins
 Plugin 'tmhedberg/matchit'
@@ -97,3 +98,7 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 " Undotree mappings
 nmap <silent> <Leader>u :UndotreeToggle<CR>
+
+" UUID mappings
+let g:nuuid_no_mappings = 1
+nmap <Leader>d <Plug>Nuuid
