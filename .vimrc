@@ -30,6 +30,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'fatih/vim-go'
+Plugin 'janko-m/vim-test'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -89,12 +90,17 @@ nmap <silent> \p :NERDTreeToggle<CR>
 nmap <silent> <C-b> :BufExplorer<CR>
 
 " vim-rspec mappings
-let g:rspec_command = "!bundle exec rspec --drb {spec}"
+"map <Leader>t :call RunCurrentSpecFile()<CR>
+"map <Leader>s :call RunNearestSpec()<CR>
+"map <Leader>l :call RunLastSpec()<CR>
+"map <Leader>a :call RunAllSpecs()<CR>
 
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+" these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
+map <Leader>s :TestNearest<CR> "
+map <Leader>t :TestFile<CR>    "
+map <Leader>a :TestSuite<CR>   "
+map <Leader>l :TestLast<CR>    "
+map <Leader>g :TestVisit<CR>   "
 
 " Undotree mappings
 nmap <silent> <Leader>u :UndotreeToggle<CR>
