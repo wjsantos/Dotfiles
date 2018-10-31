@@ -108,3 +108,9 @@ nmap <silent> <Leader>u :UndotreeToggle<CR>
 " UUID mappings
 let g:nuuid_no_mappings = 1
 nmap <Leader>d <Plug>Nuuid
+
+" Pry macro
+map ,p Orequire 'pry'; binding.pry<ESC>
+
+" NERDTree parent folder
+map \o :e %:h<CR>
