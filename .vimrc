@@ -8,6 +8,10 @@ syntax   on       " syntax highlight
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Maintain undo history between sessions
+set undofile
+set undodir=~/.vim/undodir
+
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
@@ -31,6 +35,9 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'fatih/vim-go'
 Plugin 'janko-m/vim-test'
+Plugin 'noahfrederick/vim-composer'
+Plugin 'noahfrederick/vim-laravel'
+Plugin 'joonty/vim-phpqa'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -90,6 +97,8 @@ nmap <silent> \p :NERDTreeToggle<CR>
 nmap <silent> <C-b> :BufExplorer<CR>
 
 " vim-rspec mappings
+"let g:rspec_command = "!bundle exec rspec --drb {spec}"
+"
 "map <Leader>t :call RunCurrentSpecFile()<CR>
 "map <Leader>s :call RunNearestSpec()<CR>
 "map <Leader>l :call RunLastSpec()<CR>
@@ -101,6 +110,8 @@ map <Leader>t :TestFile<CR>    "
 map <Leader>a :TestSuite<CR>   "
 map <Leader>l :TestLast<CR>    "
 map <Leader>g :TestVisit<CR>   "
+let test#ruby#bundle_exec = 0
+let test#ruby#minitest#executable = 'source .env && RAILS_ENV=test bundle exec rails test'
 
 " Undotree mappings
 nmap <silent> <Leader>u :UndotreeToggle<CR>
@@ -112,5 +123,12 @@ nmap <Leader>d <Plug>Nuuid
 " Pry macro
 map ,p Orequire 'pry'; binding.pry<ESC>
 
+" CtrlP
+let g:ctrlp_cmd = 'CtrlPMixed'
+
 " NERDTree parent folder
 map \o :e %:h<CR>
+
+" PHP
+let g:phpqa_messdetector_autorun = 0
+let g:phpqa_codesniffer_autorun = 0
