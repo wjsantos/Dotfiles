@@ -122,6 +122,7 @@ nmap <Leader>d <Plug>Nuuid
 
 " Pry macro
 map ,p Orequire 'pry'; binding.pry<ESC>
+map ,y O$self = $this ; \Psy\Shell::debug(get_defined_vars());<ESC>
 
 " CtrlP
 let g:ctrlp_cmd = 'CtrlPMixed'
