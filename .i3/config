@@ -9,11 +9,44 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+exec_always --no-startup-id feh --randomize --bg-fill ~/.config/i3/wallpapers/
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:DejaVu Sans 10
+
+set_from_resource $backgr background        #002B36
+set_from_resource $bg_alt background_alt    #93A1A1
+set_from_resource $foregr foreground        #586E75
+set_from_resource $primar primary           #268BD2
+set_from_resource $urgent urgent            #DC322F
+
+# Window colors
+client.background $backgr   # default background color
+
+# bar border    - Border color around title bar (used in tabbed windows)
+# window border - Border color around window
+# text          - Text color for the title bar
+# indicator     - Color of border edge where new window will be created
+
+# class                 bar border  win border  text        indicator
+client.focused          $primar     $primar     $backgr     $primar
+client.focused_inactive $bg_alt     $bg_alt     $backgr     $bg_alt
+client.unfocused        $backgr     $backgr     $foregr     $backgr
+client.urgent           $backgr     $urgent     $backgr     $urgent
+
+# Windows have a border of 4 pixels; replace pixel with normal to show titlebar
+new_window pixel 4
+
+# Don't show window borders if there is only one window open
+hide_edge_borders smart
+
+# Show gaps between open windows; requires i3-gaps fork
+gaps inner 16
+gaps outer 16
+gaps top 24
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -30,7 +63,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -39,11 +72,15 @@ bindsym $mod+Shift+q kill
 bindsym Control+Shift+Escape exec i3lock -t -i /home/wsantos/Dotfiles/.i3/background.png
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# Open launcher
+bindsym $mod+d         exec --no-startup-id rofi -show run
+bindsym $mod+shift+d   exec --no-startup-id dmenu_run
 
 # change focus
 bindsym $mod+j focus down
@@ -169,7 +206,5 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
-
-client.focused #FF0000 #F0A830 #301818 #0000FF
 
 exec --no-startup-id i3-battery-popup
