@@ -105,12 +105,12 @@ nmap <silent> <C-b> :BufExplorer<CR>
 "map <Leader>a :call RunAllSpecs()<CR>
 
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
-map <Leader>s :TestNearest<CR> "
-map <Leader>t :TestFile<CR>    "
-map <Leader>a :TestSuite<CR>   "
-map <Leader>l :TestLast<CR>    "
-map <Leader>g :TestVisit<CR>   "
-let test#ruby#bundle_exec = 0
+map <Leader>s :TestNearest<CR>
+map <Leader>t :TestFile<CR>
+map <Leader>a :TestSuite<CR>
+map <Leader>l :TestLast<CR>
+map <Leader>g :TestVisit<CR>
+let test#ruby#bundle_exec = 1
 let test#ruby#minitest#executable = 'source .env && RAILS_ENV=test bundle exec rails test'
 
 " Undotree mappings
