@@ -11,12 +11,13 @@
 
 exec --no-startup-id picom
 exec_always --no-startup-id feh --randomize --bg-fill ~/.config/i3/wallpapers/
+exec_always --no-startup-id killall polybar && polybar default
 
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:DejaVu Sans 10
+font Fantasque Sans Mono
 
 set_from_resource $backgr background        #002B36
 set_from_resource $bg_alt background_alt    #93A1A1
@@ -47,7 +48,7 @@ hide_edge_borders smart
 # Show gaps between open windows; requires i3-gaps fork
 gaps inner 16
 gaps outer 16
-gaps top 24
+gaps top 16
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -204,8 +205,6 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
-
-exec --no-startup-id i3-battery-popup
+# bar {
+#         status_command i3status
+# }
