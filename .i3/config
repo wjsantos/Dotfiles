@@ -11,7 +11,7 @@
 
 exec --no-startup-id picom
 exec_always --no-startup-id feh --randomize --bg-fill ~/.config/i3/wallpapers/
-exec_always --no-startup-id killall polybar && polybar default
+exec_always --no-startup-id killall polybar ; polybar default
 
 set $mod Mod4
 
