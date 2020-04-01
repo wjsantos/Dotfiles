@@ -9,6 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+exec --no-startup-id picom
 exec_always --no-startup-id feh --randomize --bg-fill ~/.config/i3/wallpapers/
 
 set $mod Mod4
