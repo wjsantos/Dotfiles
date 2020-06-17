@@ -25,6 +25,9 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'mbbill/undotree'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'kburdett/vim-nuuid'
+Plugin 'preservim/nerdcommenter'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'majutsushi/tagbar'
 
 " Lang's plugins
 Plugin 'tmhedberg/matchit'
@@ -38,6 +41,7 @@ Plugin 'janko-m/vim-test'
 Plugin 'noahfrederick/vim-composer'
 Plugin 'noahfrederick/vim-laravel'
 Plugin 'joonty/vim-phpqa'
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -133,3 +137,14 @@ map \o :e %:h<CR>
 " PHP
 let g:phpqa_messdetector_autorun = 0
 let g:phpqa_codesniffer_autorun = 0
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+nmap <F8> :TagbarToggle<CR>
