@@ -17,6 +17,7 @@ aspell
 at-spi2-atk
 at-spi2-core
 atk
+atkmm
 attr
 audit
 autoconf
@@ -40,6 +41,7 @@ ca-certificates
 ca-certificates-mozilla
 ca-certificates-utils
 cairo
+cairomm
 cantarell-fonts
 chromedriver
 clipmenu
@@ -52,6 +54,7 @@ coreutils
 cracklib
 cronie
 cryptsetup
+ctags
 curl
 dav1d
 db
@@ -77,9 +80,11 @@ double-conversion
 e2fsprogs
 efibootmgr
 efivar
+electron4
 elfutils
 enchant
 ethtool
+exercism-bin
 exiv2
 exo
 expat
@@ -121,9 +126,11 @@ git-crypt
 glib-networking
 glib2
 glibc
+glibmm
 glslang
 glu
 gmp
+gnome-keyring
 gnome-themes-extra
 gnu-free-fonts
 gnupg
@@ -146,6 +153,7 @@ gstreamer
 gtk-update-icon-cache
 gtk2
 gtk3
+gtkmm3
 gts
 guile
 gvim
@@ -155,6 +163,7 @@ harfbuzz-icu
 hicolor-icon-theme
 hspell
 htop
+http-parser
 hunspell
 hwids
 hwloc
@@ -166,6 +175,7 @@ iana-etc
 ibus
 icu
 ijs
+imagemagick
 imlib2
 inetutils
 intel-gmmlib
@@ -216,6 +226,7 @@ libatomic_ops
 libavc1394
 libbluray
 libcanberra
+libcanberra-pulse
 libcap
 libcap-ng
 libcdr
@@ -254,6 +265,7 @@ libglvnd
 libgpg-error
 libgudev
 libgusb
+libhandy
 libheif
 libibus
 libice
@@ -268,6 +280,7 @@ libkeybinder3
 libksba
 liblangtag
 libldap
+liblqr
 libmad
 libmatroska
 libmaxminddb
@@ -313,7 +326,9 @@ libpng
 libproxy
 libpsl
 libpulse
+libpwquality
 libqxp
+libraqm
 libraw
 libraw1394
 libreoffice-fresh
@@ -323,6 +338,7 @@ libsamplerate
 libsasl
 libseccomp
 libsecret
+libsigc++
 libsm
 libsndfile
 libsodium
@@ -399,6 +415,7 @@ libyaml
 libzip
 libzmf
 licenses
+light
 lightdm
 lightdm-gtk-greeter
 linux
@@ -425,6 +442,7 @@ md4c
 mdadm
 mesa
 metis
+minizip
 mkinitcpio
 mkinitcpio-busybox
 mobile-broadband-provider-info
@@ -468,7 +486,9 @@ pacman-mirrorlist
 pam
 pambase
 pango
+pangomm
 patch
+pavucontrol
 pciutils
 pcre
 pcre2
@@ -491,8 +511,10 @@ poppler
 poppler-data
 poppler-glib
 popt
+portaudio
 postgresql
 postgresql-libs
+postman-bin
 powerline-common
 ppp
 procps-ng
@@ -512,7 +534,9 @@ python-cached-property
 python-cairo
 python-cffi
 python-chardet
+python-click
 python-colorama
+python-configobj
 python-contextlib2
 python-cryptography
 python-dateutil
@@ -525,6 +549,7 @@ python-docker-pycreds
 python-dockerpty
 python-docopt
 python-docutils
+python-dotenv
 python-gobject
 python-html5lib
 python-idna
@@ -543,6 +568,7 @@ python-pep517
 python-pip
 python-ply
 python-progress
+python-psutil
 python-pyasn1
 python-pycparser
 python-pycups
@@ -576,7 +602,9 @@ qt5-svg
 qt5-x11extras
 raptor
 rasqal
+re2
 readline
+recordmydesktop
 redland
 reiserfsprogs
 rest
@@ -584,19 +612,25 @@ rofi
 rsync
 rtkit
 ruby
+ruby-irb
+ruby-reline
 rubygems
 run-parts
 runc
+rustup
 s-nail
 scrot
 sdl
 sdl2
+seahorse
 sed
 semver
 shaderc
 shadow
 shared-mime-info
 slang
+snappy
+snes9x-gtk
 soapui
 sound-theme-freedesktop
 speex
@@ -604,6 +638,7 @@ speexdsp
 spirv-tools
 spotify
 sqlite
+srt
 startup-notification
 strace
 sudo
@@ -641,6 +676,7 @@ vim-runtime
 virtualbox
 virtualbox-host-dkms
 vlc
+vmaf
 vte-common
 vte3
 vulkan-icd-loader
@@ -706,4 +742,3 @@ zita-resampler
 zlib
 zoom
 zstd
-pacman -Qi | awk '/^Name/{name=} /^Installed Size/{print , name}' | cut -f2 -d' '
