@@ -1,0 +1,40 @@
+#!/bin/bash
+set -eou
+
+MONITORS="eDP-1 HDMI-1"
+MONITOR=$1
+BRIGHT=$2
+
+case $MONITOR in
+  0)
+    MONITOR=eDP-1
+    ;;
+  1)
+    MONITOR=HDMI-1
+    ;;
+  *)
+    MONITOR=ALL
+    ;;
+esac
+
+case $BRIGHT in
+  low)
+    BRIGHT=0.3
+    ;;
+  med)
+    BRIGHT=0.6
+    ;;
+  high)
+    BRIGHT=1
+    ;;
+  *)
+    BRIGHT=0.6
+esac
+
+if [ "$MONITOR" = "ALL" ] ; then
+  for x in $MONITORS ; do
+    xrandr --output $x --brightness $BRIGHT
+  done
+else
+  xrandr --output $MONITOR --brightness $BRIGHT
+fi

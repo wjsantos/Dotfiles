@@ -69,6 +69,13 @@
 "scrot -s"
   Print
 
+"$HOME/bin/bright all high"
+  Mod4+F1
+"$HOME/bin/bright all med"
+  Mod4+F2
+"$HOME/bin/bright all low"
+  Mod4+F3
+
 # Increase volume
 "pactl set-sink-volume @DEFAULT_SINK@ +1000"
   XF86AudioRaiseVolume
