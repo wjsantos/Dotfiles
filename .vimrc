@@ -26,8 +26,8 @@ Plugin 'mbbill/undotree'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'kburdett/vim-nuuid'
 Plugin 'preservim/nerdcommenter'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'majutsushi/tagbar'
+Plugin 'airblade/vim-gitgutter'
 
 " Lang's plugins
 Plugin 'tmhedberg/matchit'
@@ -42,6 +42,7 @@ Plugin 'noahfrederick/vim-composer'
 Plugin 'noahfrederick/vim-laravel'
 Plugin 'joonty/vim-phpqa'
 Plugin 'rust-lang/rust.vim'
+Plugin 'pangloss/vim-javascript'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
