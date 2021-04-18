@@ -16,18 +16,11 @@ export DISABLE_AUTO_TITLE=true
 alias be="bundle exec"
 alias ls="ls --color"
 
-# Docker
-alias docker.rm='docker rm -f $(docker ps -a -q)'
-alias docker.rmi='docker rmi -f $(docker images -q)'
-
-alias ip_route_fix='for x in `ip route | grep linkdown | cut -f1 -d" " | grep 172` ; do sudo ip route del $x ; done'
-
 # set PATH to includes rbenv if exists
 if [ -d "$HOME/.rbenv/shims" ] ; then
     export PATH="$HOME/.rbenv/shims:$PATH"
     eval "$(rbenv init -)"
 fi
-
 
 connect_container(){
   local namespace=$1
@@ -35,3 +28,18 @@ connect_container(){
   local pod_name=`kubectl get pods -n $namespace | grep Running | awk '{ print $1 }' | head -n1`
   kubectl exec -n $namespace -it $pod_name bash
 }
+
+# NPM config
+export NPM_PACKAGES="$HOME/.node_modules"
+export PATH="$NPM_PACKAGES/bin:$PATH"
+export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+
+if ! cat /tmp/teste | grep "$NPM_PACKAGES"; then
+  touch $HOME/.npmrc
+  echo "prefix = $NPM_PACKAGES" >> $HOME/.npmrc
+fi
+
+# set PATH to includes nvm if exists
+if [ -d "$HOME/.nvm" ] ; then
+  source /usr/share/nvm/init-nvm.sh
+fi
