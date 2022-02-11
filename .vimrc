@@ -23,13 +23,14 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'mbbill/undotree'
-Plugin 'jlanzarotta/bufexplorer'
 Plugin 'kburdett/vim-nuuid'
 Plugin 'preservim/nerdcommenter'
 Plugin 'majutsushi/tagbar'
 Plugin 'airblade/vim-gitgutter'
 
 " Lang's plugins
+Plugin 'xuhdev/SingleCompile'
+Plugin 'honza/vim-snippets'
 Plugin 'tmhedberg/matchit'
 Plugin 'godlygeek/tabular'
 Plugin 'mattn/emmet-vim'
@@ -38,8 +39,6 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'fatih/vim-go'
 Plugin 'janko-m/vim-test'
-Plugin 'noahfrederick/vim-composer'
-Plugin 'noahfrederick/vim-laravel'
 Plugin 'joonty/vim-phpqa'
 Plugin 'rust-lang/rust.vim'
 Plugin 'pangloss/vim-javascript'
@@ -135,17 +134,24 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 " NERDTree parent folder
 map \o :e %:h<CR>
 
-" PHP
-let g:phpqa_messdetector_autorun = 0
-let g:phpqa_codesniffer_autorun = 0
-
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" NerdCommenter
+vmap <silent> <C-_> <Plug>NERDCommenterToggle<CR>
 
 nmap <F8> :TagbarToggle<CR>
+
+" SingleCompile
+nmap <F9> :SCCompile<cr>
+nmap <F10> :SCCompileRun<cr>
+
+function! ToggleVerbose()
+    if !&verbose
+        set verbosefile=~/.log/vim/verbose.log
+        set verbose=15
+    else
+        set verbose=0
+        set verbosefile=
+    endif
+endfunction
