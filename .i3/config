@@ -10,14 +10,17 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 exec --no-startup-id picom
-exec_always --no-startup-id feh --randomize --bg-fill ~/.config/i3/wallpapers/
+exec_always --no-startup-id "feh --randomize --bg-fill ~/.config/i3/wallpapers/"
 exec_always --no-startup-id killall polybar ; polybar default
+
+# disable touchpad
+exec --no-startup-id "xinput disable 16"
 
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font Fantasque Sans Mono
+font Fantasque
 
 set_from_resource $backgr background        #002B36
 set_from_resource $bg_alt background_alt    #93A1A1
@@ -71,7 +74,8 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # lock screen
-bindsym Control+Shift+Escape exec i3lock -t -i /home/wsantos/Dotfiles/.i3/background.png
+bindsym Control+Shift+Escape exec "i3lock -t -i /home/wsantos/Dotfiles/.i3/background.png; systemctl suspend"
+bindsym $mod+Pause exec "i3lock -t -i /home/wsantos/Dotfiles/.i3/background.png"
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
@@ -134,23 +138,23 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-workspace 1:specs   output LVDS1
-workspace 2:net     output VGA1
-workspace 3:apps    output VGA1
-workspace 4:spotify output LVDS1
-workspace 5:prod    output LVDS1
-workspace 6         output VGA1
-workspace 7         output VGA1
-workspace 8         output VGA1
-workspace 9         output VGA1
-workspace 10        output VGA1
+workspace 1  output  eDP-1
+workspace 2  output HDMI-1
+workspace 3  output HDMI-1
+workspace 4  output HDMI-1
+workspace 5  output HDMI-1
+workspace 6  output HDMI-1
+workspace 7  output HDMI-1
+workspace 8  output HDMI-1
+workspace 9  output HDMI-1
+workspace 10 output HDMI-1
 
 # switch to workspace
-bindsym $mod+1 workspace 1:specs
-bindsym $mod+2 workspace 2:net
-bindsym $mod+3 workspace 3:apps
-bindsym $mod+4 workspace 4:spotify
-bindsym $mod+5 workspace 5:prod
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
@@ -158,11 +162,11 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1:specs
-bindsym $mod+Shift+2 move container to workspace 2:net
-bindsym $mod+Shift+3 move container to workspace 3:apps
-bindsym $mod+Shift+4 move container to workspace 4:spotify
-bindsym $mod+Shift+5 move container to workspace 5:prod
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
