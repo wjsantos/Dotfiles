@@ -42,6 +42,7 @@ Plugin 'janko-m/vim-test'
 Plugin 'joonty/vim-phpqa'
 Plugin 'rust-lang/rust.vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'maralla/completor.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -155,3 +156,12 @@ function! ToggleVerbose()
         set verbosefile=
     endif
 endfunction
+
+" Enable lsp for go by using gopls
+let g:completor_filetype_map = {}
+let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls -remote=auto'}"
+
+let g:go_doc_popup_window = 1
+g:go_imports_autosave = 1
+g:go_fmt_autosave = 1
+
