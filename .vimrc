@@ -143,10 +143,6 @@ vmap <silent> <C-_> <Plug>NERDCommenterToggle<CR>
 
 nmap <F8> :TagbarToggle<CR>
 
-" SingleCompile
-nmap <F9> :SCCompile<cr>
-nmap <F10> :SCCompileRun<cr>
-
 function! ToggleVerbose()
     if !&verbose
         set verbosefile=~/.log/vim/verbose.log
@@ -157,11 +153,27 @@ function! ToggleVerbose()
     endif
 endfunction
 
-" Enable lsp for go by using gopls
+" Enable lsp for go by using gopls ; CTRL + X + O
 let g:completor_filetype_map = {}
 let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls -remote=auto'}"
 
+" SHIFT + K
 let g:go_doc_popup_window = 1
-g:go_imports_autosave = 1
-g:go_fmt_autosave = 1
+let g:go_imports_autosave = 1
+let g:go_fmt_autosave = 1
 
+" WINDOW ZOOMING
+noremap Zz <c-w>_ \| <c-w>\|
+noremap Zo <c-w>=
+
+" vim-go debug
+noremap <F5> :GoDebugContinue<CR>
+noremap <c-F5> :GoDebugHalt<CR>
+noremap <F9> :GoDebugBreakpoint<CR>
+noremap <c-F10> :GoDebugStart<CR>
+noremap <F10> :GoDebugNext<CR>
+noremap <F11> :GoDebugStep<CR>
+noremap <c-F11> :GoDebugStepOut<CR>
+
+" set fizz files to go syntax
+autocmd BufNewFile,BufRead *.fizz set syntax=go
