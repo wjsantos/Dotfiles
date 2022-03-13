@@ -33,9 +33,9 @@ connect_container(){
 export NPM_PACKAGES="$HOME/.node_modules"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+touch $HOME/.npmrc
 
-if ! cat /tmp/teste | grep "$NPM_PACKAGES"; then
-  touch $HOME/.npmrc
+if $(! cat $HOME/.npmrc | grep -q "$NPM_PACKAGES"); then
   echo "prefix = $NPM_PACKAGES" >> $HOME/.npmrc
 fi
 
