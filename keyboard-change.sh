@@ -18,9 +18,10 @@ if [ "$KEYBOARD" == "thinkpad" ] ; then
 fi
 
 # to force on X11 config
-# localectl set-x11-keymap --no-convert $LAYOUT $MODEL $VARIANT $OPTS
+echo "localectl set-x11-keymap --no-convert $LAYOUT $MODEL $VARIANT $OPTS"
 
-# set on session current keyboard
+#
+echo "set on session current keyboard:"
 echo "setxkbmap -model $MODEL -layout $LAYOUT -variant $VARIANT -option $OPTS"
 
 # Cedilla
