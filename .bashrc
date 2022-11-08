@@ -8,6 +8,7 @@ export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.rbenv/bin:$PATH
 export PATH=$PATH:/home/wsantos/.dotnet/tools
+export PATH=$PATH:/home/wsantos/.local/share/gem/ruby/3.0.0/bin
 
 # Disables tmux auto title
 export DISABLE_AUTO_TITLE=true
@@ -43,3 +44,23 @@ fi
 if [ -d "$HOME/.nvm" ] ; then
   source /usr/share/nvm/init-nvm.sh
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+function cd_go_app(){
+  cd $GOPATH/github.com/peerbnk-teck
+}
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/google-cloud-sdk/path.bash.inc"; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/google-cloud-sdk/completion.bash.inc"; fi
+
+# loading cargo rust env
+. "$HOME/.cargo/env"
+source "$HOME/.cargo/env"
+
+neofetch
