@@ -7,8 +7,7 @@ export GOPATH=$HOME/go
 export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.rbenv/bin:$PATH
-export PATH=$PATH:/home/wsantos/.dotnet/tools
-export PATH=$PATH:/home/wsantos/.local/share/gem/ruby/3.0.0/bin
+export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin
 
 # Disables tmux auto title
 export DISABLE_AUTO_TITLE=true
@@ -20,7 +19,8 @@ alias ls="ls --color"
 # set PATH to includes rbenv if exists
 if [ -d "$HOME/.rbenv/shims" ] ; then
     export PATH="$HOME/.rbenv/shims:$PATH"
-    eval "$(rbenv init -)"
+    # eval "$(rbenv init -)"
+    eval "$(~/.rbenv/bin/rbenv init - bash)"
 fi
 
 connect_container(){
@@ -49,10 +49,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-function cd_go_app(){
-  cd $GOPATH/github.com/peerbnk-teck
-}
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/google-cloud-sdk/path.bash.inc"; fi
 
@@ -63,4 +59,12 @@ if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/google-clo
 . "$HOME/.cargo/env"
 source "$HOME/.cargo/env"
 
+# connection to ssh-agent socket
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+source $HOME/.bashrc.local
+
 neofetch
+
+. "$HOME/.asdf/asdf.sh"
+. "$HOME/.asdf/completions/asdf.bash"
+
