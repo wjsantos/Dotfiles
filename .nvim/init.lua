@@ -1,0 +1,13 @@
+require("plugins.setup")
+require("plugins.default")
+require("plugins.persistent_undo")
+
+require("plugins.lualine")
+require("plugins.nvim-tree")
+require("plugins.bufexplorer")
+require("plugins.comment")
+require("plugins.telescope")
+require("plugins.nvim-treesitter")
+require("plugins.gitsigns")
+require("plugins.nvim-cmp")
+require("plugins.nuuid")
