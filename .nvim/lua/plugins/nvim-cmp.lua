@@ -108,6 +108,7 @@ lspconfig['gopls'].setup {
 }
 
 lspconfig['pyright'].setup{}
+lspconfig['tsserver'].setup{}
 
 cmp.setup {
   formatting = {

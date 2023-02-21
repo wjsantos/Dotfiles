@@ -6,6 +6,9 @@ vim.opt.foldexpr="nvim_treesitter#foldexpr()"
 vim.opt.foldenable=false
 
 treesitter.setup {
+  autotag = {
+    enable = true,
+  },
   ensure_installed = {
     "dockerfile",
     "gitignore",

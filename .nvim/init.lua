@@ -11,3 +11,6 @@ require("plugins.nvim-treesitter")
 require("plugins.gitsigns")
 require("plugins.nvim-cmp")
 require("plugins.nuuid")
+
+require("plugins.null-ls")
+require("plugins.prettier")
