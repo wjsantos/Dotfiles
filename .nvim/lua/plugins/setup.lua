@@ -55,6 +55,8 @@ return require("packer").startup(function()
     "nvim-treesitter/nvim-treesitter",      -- https://github.com/nvim-treesitter/nvim-treesitter
     run = ":TSUpdate"
   }
+
+  use "windwp/nvim-ts-autotag"
   use "nvim-treesitter/nvim-treesitter-textobjects" -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   use "rhysd/vim-clang-format"              -- https://github.com/rhysd/vim-clang-format
   use "fatih/vim-go"                        -- https://github.com/fatih/vim-go
