@@ -3,7 +3,7 @@ require("plugins.default")
 require("plugins.persistent_undo")
 
 require("plugins.lualine")
-require("plugins.nvim-tree")
+require("plugins.nerdtree")
 require("plugins.bufexplorer")
 require("plugins.comment")
 require("plugins.telescope")

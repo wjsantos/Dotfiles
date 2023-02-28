@@ -25,14 +25,15 @@ return require("packer").startup(function()
 
   -- Productivity
   use "jlanzarotta/bufexplorer" -- https://github.com/jlanzarotta/bufexplorer
+  use "preservim/nerdtree"
 
   use "nvim-lualine/lualine.nvim"       -- https://github.com/nvim-lualine/lualine.nvim
-  use {
-    "nvim-tree/nvim-tree.lua",          -- https://github.com/nvim-tree/nvim-tree.lua
-    requires = {
-      "nvim-tree/nvim-web-devicons",    -- https://github.com/nvim-tree/nvim-web-devicons
-    },
-  }
+  -- use {
+  --   "nvim-tree/nvim-tree.lua",          -- https://github.com/nvim-tree/nvim-tree.lua
+  --   requires = {
+  --     "nvim-tree/nvim-web-devicons",    -- https://github.com/nvim-tree/nvim-web-devicons
+  --   },
+  -- }
   use {
     "nvim-telescope/telescope-fzf-native.nvim", -- https://github.com/nvim-telescope/telescope-fzf-native.nvim
     run = "make",
