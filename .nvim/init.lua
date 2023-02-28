@@ -14,3 +14,4 @@ require("plugins.nuuid")
 
 require("plugins.null-ls")
 require("plugins.prettier")
+require("plugins.trouble")
