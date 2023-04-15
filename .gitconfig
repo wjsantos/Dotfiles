@@ -1,8 +1,7 @@
 [user]
   name = Wellington Santos
   email = wjsantos.wj@gmail.com
-  signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC1sG/X7pzDJXidF0n7/yX3/HXrXnoXb7tzrNZZu+sRSS/JiDrgs9XIiRIckhn11U0fDLd7930D0C4wpWnZt+cEMSAHWPvN21KjL+dqPqE4BPzgTnYALory3MfalrjuEF7x7YBbYK5ytIvSUnlysY4aQfQbqF2n2sZuvlRGKT3z500Po9bhKg5szTG43owEsfEwQIrxV26UZ1v9E2WLyAOaUeWblaOmJl19Cwc1O86q3c9x3rfBw9n/hI6WKtfLjSxkorBbCGer3KmDyFbLjulC8bBKq2Th9Ir60nAJza3Ob3o2a9Cw8k+j6Y84TrJnULe1okrEB9r9AD1mNJOo9qm7qe4jIc6UMnTSOvYRvKXGz8vpZ8uwBDOh40swa07s3wWuq5tTOYSoX/SU+gaVgIO0e3OAYbVQAATL0N0oobixlS36Lu7SSbTdVx4zMSeBDaQOpeXlMid3lNxhlmlILZTHvnM3Q0wlFokTAN5ChQAqGiOfJhTjSO+34a/vSNZaIYk=
-[commit]
+  signingkey = ssh-rsa $HOME/.ssh/id_rsa.pub
   gpgsign = true
 [core]
   editor = vim
@@ -19,10 +18,10 @@
 
 [init]
 	defaultBranch = main
-[gpg]
-	format = ssh
 [gpg "ssh"]
 	allowedSignersFile = /home/wsantos/.ssh/allowed_signers
 
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
+[gpg]
+	format = ssh
