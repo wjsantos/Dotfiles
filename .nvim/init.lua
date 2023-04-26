@@ -11,8 +11,13 @@ require("plugins.nvim-treesitter")
 require("plugins.gitsigns")
 require("plugins.nvim-cmp")
 require("plugins.nuuid")
-require("plugins.vim-go")
+-- require("plugins.vim-go")
+require("plugins.go")
+require("plugins.dap")
+require("plugins.plantuml")
 
 require("plugins.null-ls")
 require("plugins.prettier")
 require("plugins.trouble")
+
+
