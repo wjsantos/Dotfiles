@@ -18,10 +18,3 @@ prettier.setup({
   },
 })
 
-vim.cmd([[
-" formatting in normal mode
-nmap <Leader>f :Prettier<CR>
-
-" range_formatting in visual mode
-xmap <buffer> <Leader>f :Prettier<CR>
-]])

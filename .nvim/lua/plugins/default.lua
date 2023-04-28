@@ -29,10 +29,3 @@ vim.opt.backup=false
 vim.opt.swapfile=false
 vim.opt.nu=true
 vim.opt.cursorcolumn=true
-
--- window nav
-local keymap = vim.keymap -- for conciseness
-keymap.set("n", '<C-h>', "<C-w>h")
-keymap.set("n", '<C-j>', "<C-w>j")
-keymap.set("n", '<C-k>', "<C-w>k")
-keymap.set("n", '<C-l>', "<C-w>l")
