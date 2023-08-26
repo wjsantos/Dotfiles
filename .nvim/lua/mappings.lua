@@ -97,3 +97,12 @@ keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
 keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>",
   {silent = true, noremap = true}
 )
+
+-- vim-test
+keymap.set("n", "<leader>t", "<cmd>TestNearest<CR>", {silent = true})
+keymap.set("n", "<leader>T", "<cmd>TestFile<CR>", {silent = true})
+keymap.set("n", "<leader>a", "<cmd>TestSuite<CR>", {silent = true})
+keymap.set("n", "<leader>l", "<cmd>TestLast<CR>", {silent = true})
+keymap.set("n", "<leader>g", "<cmd>TestVisit<CR>", {silent = true})
+
+-- let test#strategy = { 'nearest': 'neovim', 'file':    'dispatch', 'suite':   'basic' }
