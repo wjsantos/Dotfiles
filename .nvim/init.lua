@@ -1,6 +1,7 @@
 require("plugins.setup")
 require("plugins.default")
 require("plugins.persistent_undo")
+require("plugins.whop")
 
 require("plugins.lualine")
 require("plugins.comment")

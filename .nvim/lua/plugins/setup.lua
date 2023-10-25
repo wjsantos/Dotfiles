@@ -27,6 +27,7 @@ return require("packer").startup(function()
 
   -- Productivity
   use "jlanzarotta/bufexplorer" -- https://github.com/jlanzarotta/bufexplorer
+  use "biozz/whop.nvim"
   use "preservim/nerdtree"
 
   use "nvim-lualine/lualine.nvim"       -- https://github.com/nvim-lualine/lualine.nvim

@@ -76,6 +76,8 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fx', builtin.treesitter, {})
+vim.keymap.set('n', '<leader>fq', builtin.quickfix, {})
+vim.keymap.set("n", "<leader>fw", ":Telescope whop<CR>", { noremap = true, desc = "whop.nvim (telescope)" })
 
 -- Trouble
 -- Lua
@@ -104,5 +106,40 @@ keymap.set("n", "<leader>T", "<cmd>TestFile<CR>", {silent = true})
 keymap.set("n", "<leader>a", "<cmd>TestSuite<CR>", {silent = true})
 keymap.set("n", "<leader>l", "<cmd>TestLast<CR>", {silent = true})
 keymap.set("n", "<leader>g", "<cmd>TestVisit<CR>", {silent = true})
-
 -- let test#strategy = { 'nearest': 'neovim', 'file':    'dispatch', 'suite':   'basic' }
+--
+-- vim-go mappings
+-- go tests
+keymap.set("n", '<leader>ta', "<cmd>GoTest<cr>")
+keymap.set("n", '<leader>tt', "<cmd>GoTestFile<cr>")
+keymap.set("n", '<leader>tf', "<cmd>GoTestFunc<cr>")
+keymap.set("n", '<leader>tp', "<cmd>GoTestPkg<cr>")
+keymap.set("n", '<leader>dtt', "<cmd>GoDebug -t<cr>")
+keymap.set("n", '<leader>dtf', "<cmd>GoDebug -n<cr>")
+keymap.set("n", '<leader>dtp', "<cmd>GoDebug -p<cr>")
+
+-- go debug
+keymap.set("n", '<F5>',  "<cmd>GoDbgContinue<cr>")
+keymap.set("n", '<F7>',  "<cmd>DapStepInto<cr>")
+keymap.set("n", '<F8>',  "<cmd>DapStepOver<cr>")
+keymap.set("n", '<F9>',  "<cmd>GoBreakToggle<cr>")
+keymap.set("n", '<F10>', "<cmd>GoDbgStop<cr>")
+keymap.set("n", '<S-F10>', "<cmd>GoDbgKeys<cr>")
+
+-- go debug mappings
+-- c	continue
+-- n	next
+-- s	step
+-- o	stepout
+-- S	cap S: stop debug
+-- u	up
+-- D	cap D: down
+-- C	cap C: run to cursor
+-- b	toggle breakpoint
+-- P	cap P: pause
+-- p	print, hover value (also in visual mode)
+
+-- go general
+keymap.set("n", '<leader>tags', "<cmd>GoAddTags<cr>")
+keymap.set("n", '<leader>fill', "<cmd>GoFillStruct<cr>")
+keymap.set("n", '<leader>A', "<cmd>GoAlt<cr>")

@@ -127,7 +127,7 @@ lspconfig['gopls'].setup {
         deepequalerrors = true,
         embed = true,
         errorsas = true,
-        fieldalignment = true,
+        fieldalignment = false,
         httpresponse = true,
         ifaceassert = true,
         loopclosure = true,
