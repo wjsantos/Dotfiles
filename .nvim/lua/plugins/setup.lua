@@ -45,8 +45,12 @@ return require("packer").startup(function()
     "nvim-telescope/telescope.nvim", -- https://github.com/nvim-telescope/telescope.nvim
     requires = {
       "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-live-grep-args.nvim",
     },
     branch = "0.1.x",
+    config = function()
+      require("telescope").load_extension("live_grep_args")
+    end
   }
 
   -- Development
