@@ -25,16 +25,30 @@ keymap.set("n", '<C-l>', "<C-w>l")
 keymap.set("n", '<Leader>d', "<Plug>Nuuid")
 
 -- LSP
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+  opts = opts or {}
+  opts.border = opts.border or 'single'
+  opts.max_width= opts.max_width or 80
+  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
+keymap.set('n', '<space>e', vim.diagnostic.open_float)
+keymap.set('n', '[d', vim.diagnostic.goto_prev)
+keymap.set('n', ']d', vim.diagnostic.goto_next)
+keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+
 local bufopts = { noremap=true, silent=true, buffer=bufnr }
 keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
 keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-keymap.set('n', 'rn', vim.lsp.buf.rename, bufopts)
-keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
 keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
+keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
+keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+
 
 -- LSP autocomplete
 vim.cmd([[
