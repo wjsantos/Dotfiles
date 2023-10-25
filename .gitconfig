@@ -4,7 +4,7 @@
   signingkey = ssh-rsa $HOME/.ssh/id_rsa.pub
   gpgsign = true
 [core]
-  editor = vim
+  editor = nvim
   excludesfile = /Users/wjsantos/.gitignore
 [color]
   diff = auto
