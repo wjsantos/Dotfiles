@@ -18,8 +18,9 @@ local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
 return require("packer").startup(function()
   use "wbthomason/packer.nvim"          -- https://github.com/wbthomason/packer.nvim
-  use 'vim-test/vim-test'          
+  use 'vim-test/vim-test'
   use 'tpope/vim-rails'
+  use 'mfussenegger/nvim-lint'
 
   -- Look and Feel
   use "rebelot/kanagawa.nvim"

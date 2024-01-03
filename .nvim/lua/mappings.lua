@@ -49,7 +49,6 @@ keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
 keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
 keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
 
-
 -- LSP autocomplete
 vim.cmd([[
 " Expand
@@ -87,6 +86,7 @@ xmap <buffer> <Leader>f :Prettier<CR>
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+vim.keymap.set('n', '<leader>fq', builtin.quickfixhistory, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fx', builtin.treesitter, {})

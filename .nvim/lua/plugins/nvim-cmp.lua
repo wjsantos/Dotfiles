@@ -167,6 +167,21 @@ lspconfig['gopls'].setup {
 
 lspconfig['pyright'].setup{}
 lspconfig['tsserver'].setup{}
+lspconfig['solargraph'].setup{
+  cmd = { os.getenv( "HOME" ) .. "/.asdf/shims/solargraph", 'stdio' },
+  settings = {
+    solargraph = {
+      autoformat = true,
+      completion = true,
+      diagnostic = true,
+      folding = true,
+      references = true,
+      rename = true,
+      symbols = true
+    }
+  }
+}
+
 
 vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 
