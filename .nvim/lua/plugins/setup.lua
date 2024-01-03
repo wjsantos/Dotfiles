@@ -82,6 +82,8 @@ return require("packer").startup(function()
   use "saadparwaiz1/cmp_luasnip"
   use "hrsh7th/cmp-nvim-lsp"                -- https://github.com/hrsh7th/cmp-nvim-lsp
   use "hrsh7th/nvim-cmp"                    -- https://github.com/hrsh7th/nvim-cmp
+  use "hrsh7th/cmp-buffer"
+  use "hrsh7th/cmp-path"
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
   use "neovim/nvim-lspconfig"               -- https://github.com/neovim/nvim-lspconfig
